@@ -11,7 +11,7 @@ class KeyboardController {
       (index) => GameKeyboard(
         index,
         enabled: true,
-        symbol: String.fromCharCode(c + index).toUpperCase(),
+        symbol: String.fromCharCode(c + index),
       ),
     );
   }

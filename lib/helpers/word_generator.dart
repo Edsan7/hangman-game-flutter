@@ -5,13 +5,9 @@ class WordGenerator {
   static String word;
   static String wordType;
 
-
   static String getWord(){
-    word = generateWordPairs(top: 300).first.toString();
-    if(nouns.contains(word)){
-      wordType = "Noun";
-    }
-    else wordType = "Adjective";
+    word = WordPair.random(top:300).first.toString();
+    wordType = nouns.contains(word) ? "Noun" : "Adjective";
     return word;
   }
 }

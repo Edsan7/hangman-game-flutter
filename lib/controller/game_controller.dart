@@ -35,30 +35,27 @@ class GameController {
   }
 
   void getLetterByPlayer(String hint) {
+    print(hint);
     if (!_check(hint)) {
       cont++;
       image = HungmanImage.images[cont];
       wrongLetters.add(hint.toUpperCase());
     } else {
-      final index = word.indexOf(hint);
-      _setBlockEnabled(index);
+      _setBlockEnabled(hint);
     }
   }
 
-  void _setBlockEnabled(int index) {
-    final block = blocks[index];
+  void _setBlockEnabled(String hint) {
     blocks.forEach((element) {
-      if (element.letter == block.letter) {
-        element.isEnabled = true;
-      }
+      if (element.letter == hint) element.isEnabled = true;
     });
   }
 
   bool _check(String letter) {
-    if (!word.contains(letter))
-      return false;
-    else
+    if (word.contains(letter))
       return true;
+    else
+      return false;
   }
 
   String checkGame() {
@@ -70,7 +67,6 @@ class GameController {
     }
     return '';
   }
-
 
   bool _checkIfAllEnabled() {
     for (int i = 0; i < blocks.length; i++) {

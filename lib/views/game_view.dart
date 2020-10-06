@@ -143,7 +143,7 @@ class _GameViewState extends State<GameView> {
       child: Container(
         child: Center(
           child: Text(
-            KeyboardController.keyboard[index].symbol,
+            KeyboardController.keyboard[index].symbol.toUpperCase(),
             style: TextStyle(fontSize: 22,  fontWeight: FontWeight.bold),
           ),
         ),
