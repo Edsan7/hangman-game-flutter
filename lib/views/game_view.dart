@@ -130,7 +130,7 @@ class _GameViewState extends State<GameView> {
             mainAxisSpacing: 5,
           ),
           shrinkWrap: true,
-          itemCount: KEYBOARD_LENTGH,
+          itemCount: KEYBOARD_LENGTH,
           itemBuilder: _buildCap,
         ),
       ),
