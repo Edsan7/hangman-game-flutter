@@ -59,7 +59,7 @@ class _GameViewState extends State<GameView> {
 
   Container _buildTypeWord() {
     return Container(
-      margin: EdgeInsets.only(top: 5, bottom: 20),
+      margin: EdgeInsets.only(top: 5),
       child: Text(
         WORD_TYPE.replaceAll('[TYPE]', WordGenerator.wordType),
         style: Theme.of(context).textTheme.bodyText1,
@@ -83,17 +83,17 @@ class _GameViewState extends State<GameView> {
   Image _buildImage() {
     return Image.asset(
       _controller.image,
-      width: 200,
-      height: 200,
+      gaplessPlayback: true,
+      width: 150,
+      height: 250,
       alignment: Alignment.centerLeft,
     );
   }
 
   Container _buildLetterBoard() {
     return Container(
-      margin: EdgeInsets.only(top: 10),
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxHeight: 60),
+        constraints: BoxConstraints(maxHeight: 45),
         child: Center(
           child: ListView.builder(
             shrinkWrap: true,
@@ -108,12 +108,11 @@ class _GameViewState extends State<GameView> {
 
   Widget _buildLetterBlock(context, int index) {
     return Container(
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.only(right: 5),
+      padding: EdgeInsets.only(right: 20),
       child: Text(
         _controller.blocks[index].isEnabled
             ? _controller.blocks[index].letter
-            : '_',
+            : '__',
         style: TextStyle(fontSize: 30),
       ),
     );
@@ -130,7 +129,7 @@ class _GameViewState extends State<GameView> {
             mainAxisSpacing: 5,
           ),
           shrinkWrap: true,
-          itemCount: KEYBOARD_LENTGH,
+          itemCount: KEYBOARD_LENGTH,
           itemBuilder: _buildCap,
         ),
       ),

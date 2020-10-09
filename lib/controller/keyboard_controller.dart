@@ -7,7 +7,7 @@ class KeyboardController {
   static void initialize() {
     int c = 'a'.codeUnitAt(0);
     keyboard = List<GameKeyboard>.generate(
-      KEYBOARD_LENTGH,
+      KEYBOARD_LENGTH,
       (index) => GameKeyboard(
         index,
         enabled: true,

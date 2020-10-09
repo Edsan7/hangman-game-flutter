@@ -9,7 +9,7 @@ const String GAME_OVER = "Game Over";
 const String WORD_TYPE = "Word is: [TYPE]";
 const String WORD = "The word was [WORD].";
 
-const KEYBOARD_LENTGH = 26;
+const KEYBOARD_LENGTH = 26;
 
 const RESET_GAME = "Continue";
 

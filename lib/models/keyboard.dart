@@ -1,4 +1,5 @@
 class GameKeyboard {
+  
   final int id;
   final String symbol;
   bool enabled;
@@ -8,7 +9,4 @@ class GameKeyboard {
     this.symbol,
     this.enabled = true,
   });
-
-  
-  
 }

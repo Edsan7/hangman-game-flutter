@@ -35,7 +35,6 @@ class GameController {
   }
 
   void getLetterByPlayer(String hint) {
-    print(hint);
     if (!_check(hint)) {
       cont++;
       image = HungmanImage.images[cont];
